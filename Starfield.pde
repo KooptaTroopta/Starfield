@@ -91,7 +91,7 @@ void draw() {
   pushMatrix();
   barkround();
   popMatrix();
-  if (Coco[0].tim <=100) {
+  if (Coco[0].tim <=100 && yessir == 1) {
     fill(#B28046);
     ellipse(mX,mY,100,100);
     fill(0);
@@ -105,6 +105,7 @@ void draw() {
     ellipse(mX-23,mY-12,17,17);
     ellipse(mX+23,mY-12,17,17);
   }
+  if (yessir == 1) {
   for (int i = 0; i<100; i++) {
     Coco[i].Move();
     Coco[i].Show();
@@ -112,6 +113,7 @@ void draw() {
   for (int i = 0; i<50; i++) {
     Dodo[i].Move();
     Dodo[i].show();
+  }
   }
 }
 

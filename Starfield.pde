@@ -88,7 +88,6 @@ void setup() {
   }
 }
 void draw() {
-  System.out.println(yessir);
   pushMatrix();
   barkround();
   popMatrix();

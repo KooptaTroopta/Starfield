@@ -1,5 +1,4 @@
-Bust[] Coco = new Bust[100];
-Zawg[] Dodo = new Zawg[50];
+Bust[] Coco = new Bust[150];
 int mX = mouseX;
 int mY = mouseY;
 int yessir = 0;
@@ -71,8 +70,8 @@ void mouseClicked() {
   for (int i = 0; i<100; i++) {
     Coco[i] = new Bust();
   }
-  for (int i = 0; i<50; i++) {
-    Dodo[i] = new Zawg();
+  for (int i = 100; i<150; i++) {
+    Coco[i] = new Zawg();
   }
 }
 void setup() {
@@ -83,8 +82,8 @@ void setup() {
   for (int i = 0; i<100; i++) {
     Coco[i] = new Bust();
   }
-  for (int i = 0; i<50; i++) {
-    Dodo[i] = new Zawg();
+  for (int i = 100; i<150; i++) {
+    Coco[i] = new Zawg();
   }
 }
 void draw() {
@@ -106,23 +105,20 @@ void draw() {
     ellipse(mX+23,mY-12,17,17);
   }
   if (yessir == 1) {
-  for (int i = 0; i<100; i++) {
+  for (int i = 0; i<150; i++) {
     Coco[i].Move();
     Coco[i].Show();
-  }
-  for (int i = 0; i<50; i++) {
-    Dodo[i].Move();
-    Dodo[i].show();
   }
   }
 }
 
 
 class Bust {
-  int mySize, myDir, tim;
+  int mySize, myDir, tim, myC;
   double mySpeed, myX, myY;
   Bust () {
     tim = 0;
+    myC = color(255);
     mySize = (int)(Math.random()*10)+10;
     mySpeed = Math.random()*10+1;
     myX = mouseX;
@@ -131,7 +127,7 @@ class Bust {
    }
   void Show() {
     if (tim > 100) {
-      fill(255);
+      fill(myC);
       ellipse((float)myX, (float)myY, mySize, mySize);
     }
     tim++;
@@ -151,13 +147,7 @@ class Zawg extends Bust {
     myX = mouseX;
     myY = mouseY;
     myDir = (int)(Math.random()*360);
-  }
-  void show() {
-    if (tim > 100) {
-      fill(#B28046);
-      ellipse((float)myX, (float)myY, mySize, mySize);
-    }
-    tim++;
+    myC = color(#B28046);
   }
   void Move() {
     if (tim > 100) {
